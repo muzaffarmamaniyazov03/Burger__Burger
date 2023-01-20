@@ -58,15 +58,18 @@ function plusOrminus(el) {
     parentId = parent.getAttribute("id"),
     iconkakor = document.querySelector(".iconkakor");
     
-    iconkakor.style = 'background-color: red;'
+    
    
 
   if (attribute == "+") {
     product[parentId].count++;
     iconkakor.innerHTML++
+    iconkakor.style = 'background-color: red;'
   } else if (attribute == "-" && product[parentId].count > 0) {
     product[parentId].count--;
     iconkakor.innerHTML--
+  }else if (iconkakor.innerHTML<=1) {
+    iconkakor.style = 'opacity:0;'
   }
   num.innerHTML = product[parentId].count
   price.innerHTML = product[parentId].Summ
